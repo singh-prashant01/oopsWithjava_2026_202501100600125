@@ -23,6 +23,24 @@ class Student implements Comparable<Student>{
     }
 }
 
+class CustomComparator implements Comparator<Student>
+{
+    @Override 
+    public int compare(Student o1,  Student o2){
+        // TODO AUTO-generated method  stub
+        if(o1,marks != o2.marks){
+
+        }
+        return o1.rollno - o2.rollno;
+    }
+}
+class NameComparator implements Comparator<Student>{
+    @Override 
+    public int compare(Student o1,Student o2){
+        return o1 name.compareTo(o2.name) ;
+    }
+}
+
 public class ComparableDemo {
     public static void main(String[] args) {
         ArrayList<Integer> i  = new ArrayList<>();
@@ -40,12 +58,14 @@ public class ComparableDemo {
         ArrayList<Student> st = new ArrayList<>();
 
         st.add(new Student("rahul", 1, 100));
-        st.add(new Student("ramesh", 10, 200));
+        st.add(new Student("prashant", 10, 200));
         st.add(new Student("pawan", 7, 50));
         st.add(new Student("praveen", 5, 70));
         st.add(new Student("prabhat", 4, 80));
 
         st.sort(null);
+        System.out.println(st);
+        st.sort(new CustomComparator());
         System.out.println(st);
     }
 }
